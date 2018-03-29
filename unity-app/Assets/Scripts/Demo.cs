@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Demo : MonoBehaviour {
     public int serverPort = 40000;
-    public GameObject screen;   
+    public GameObject screen;
+    public GameObject hrText;   
     private TcpIpServer tcpServer;
     private UnityEngine.Video.VideoPlayer videoPlayer;
     private bool videoRemotePlay = false;
@@ -36,7 +37,7 @@ public class Demo : MonoBehaviour {
             hrVal = this.tcpServer.ReadCommand();
             Debug.Log("HR received: " + hrVal.ToString());
             // Update the UI HERE
-
+            hrText.GetComponent<TextMesh>().text = "♥HR: " + hrVal.ToString() + " bpm";
 
             // Quit was requested, int(11)
             if (hrVal == 11)
