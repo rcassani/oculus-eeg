@@ -136,7 +136,8 @@ class EEGBasicDemo:
             
             # 6) send data to unity server application
             """self.unity.writeInt32(r_mean) # global heart rate mean
-            self.unity.writeInt32(blinkRythm) # eye blink rate (nb blink per sec)
+            self.unity.writeInt32(int(blinkRythm*10000)) # eye blink rate (nb blink per sec)
+			self.unity.writeInt32(int(moveRythm *10000)) # eye move rate (nb move per sec)
             # alpha, beta, delta, theta, gamma power mean
             self.unity.writeInt32(avg_pwrBand[0])
             self.unity.writeInt32(avg_pwrBand[1])
