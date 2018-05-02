@@ -53,8 +53,14 @@ class TcpClient():
         Writes one Int32
         """
         bytes_4B = struct.pack('i', integer32)
-        bytes_4B = bytes_4B[::-1]       
+        bytes_4B = bytes_4B[::-1]
         self.client.send(bytes_4B)
+        return
+		
+    def writeArray(self, array):
+        bytes = struct.pack('=%sf' % array.shape[0], *array)
+        bytes = bytes[::-1] # reverse order
+        self.client.send(bytes)
         return
     
     def readInt32(self):
