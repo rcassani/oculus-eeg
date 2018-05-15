@@ -272,7 +272,7 @@ class MulesClient():
         # Unrolls the matrix bytes_per_element, in "package_correct_order" 
         # that has a size (n_bytes,1) 
              
-        data_format_tags = self.params['data format']*n_samples
+        data_format_tags = self.params['data format']*int(n_samples)
         # Tags used to map the elements into their corresponding representation
         package_correct_order_char = "".join(map(chr,package_correct_order))
             
