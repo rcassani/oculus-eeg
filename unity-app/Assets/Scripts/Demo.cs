@@ -13,6 +13,16 @@ public class Demo : MonoBehaviour {
     private int currentVideo = 0;
     private int requestVideo = 1;
     private int hrVal = 0;
+    private int bkVal = 0;
+    private int delta = 0;
+    private int theta = 0;
+    private int alpha = 0;
+    private int betta = 0;
+    private int gamma = 0;
+
+
+
+
     private bool videoStarted;
     
     // Use this for initialization
@@ -35,7 +45,29 @@ public class Demo : MonoBehaviour {
         if (this.tcpServer.IsDataAvailable())
         {
             hrVal = this.tcpServer.ReadCommand();
+
+            // given in blinks per second * 10000
+            bkVal = this.tcpServer.ReadCommand();
+
+            // power bands sum 10,000
+            alpha = this.tcpServer.ReadCommand();
+            betta = this.tcpServer.ReadCommand();
+            delta = this.tcpServer.ReadCommand();
+            theta = this.tcpServer.ReadCommand();
+            gamma = this.tcpServer.ReadCommand();
+
+
             Debug.Log("HR received: " + hrVal.ToString());
+
+            Debug.Log("BK received: " + bkVal.ToString());
+
+            Debug.Log("D received: " + delta.ToString());
+            Debug.Log("T received: " + theta.ToString());
+            Debug.Log("A received: " + alpha.ToString());
+            Debug.Log("B received: " + betta.ToString());
+            Debug.Log("G received: " + gamma.ToString());
+
+
             // Update the UI HERE
             hrText.GetComponent<TextMesh>().text = "♥HR: " + hrVal.ToString() + " bpm";
 
@@ -77,7 +109,7 @@ public class Demo : MonoBehaviour {
             Debug.Log("End of video: " + currentVideo.ToString("D2"));
             videoPlayer.Stop();
             requestVideo = currentVideo + 1;
-            if(requestVideo > 2)
+            if(requestVideo > 6)
             {
                 requestVideo = 1;
             }

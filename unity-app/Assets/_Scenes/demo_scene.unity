@@ -239,7 +239,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 307358697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4f73063359402c4c83aab262e0bb858, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f8f5d4eb8e16ea4da48f138cf12be4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   calculationPeriod: 1
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 307358697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e804c864f21e0784b83c35fdd2143ce7, type: 3}
+  m_Script: {fileID: 11500000, guid: a220d503dcd25fd44bdfc101b44a571d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serverPort: 40000
@@ -734,7 +734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e8029ed361e3c14287e2924f09aa8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!4 &1724569244
 Transform:
   m_ObjectHideFlags: 0
