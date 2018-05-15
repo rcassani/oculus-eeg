@@ -78,14 +78,14 @@ public class Demo : MonoBehaviour {
 
             brText.GetComponent<TextMesh>().text = "⊖⊖BR: " + bkVal.ToString() + " bpm";
 
-
+            
             tmp_scale = delta_bar.GetComponent<Transform>().localScale;
             tmp_scale.y = delta / 10000 * 2;
             delta_bar.GetComponent<Transform>().localScale = tmp_scale;
             tmp_position = delta_bar.GetComponent<Transform>().position;
             tmp_position.z = delta / 10000 * -1;
             delta_bar.GetComponent<Transform>().position = tmp_position;
-
+            
 
             // Quit was requested, int(11)
             if (hrVal == 11)

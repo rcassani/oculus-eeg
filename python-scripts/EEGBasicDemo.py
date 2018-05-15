@@ -101,7 +101,7 @@ class EEGBasicDemo:
         self.connection()
 
         # 2) Waiting for user response
-        input('press a key')
+        #input('press a key')
         self.mules_client.flushdata() # flush mules buffer
         tone(f=500, d=500)
         
@@ -119,9 +119,8 @@ class EEGBasicDemo:
             print('samples (buffer) (added): ', buflen, ' ', addlen)
             
             # 5) Start specific analysis
-            #(r_mean, r_peaks_moy) = self.HRdetection()
-            #eyeblinkrate = self.EBdetection(buflen-addlen)
-            #(avg_pwrBand, asym_pwrBand) = demo.WBdetection()
+            (r_mean, r_peaks_moy) = self.HRdetection()
+            (avg_pwrBand, asym_pwrBand) = demo.WBdetection()
             #print('Average band power (relative)', avg_pwrBand)
             #print('Asymmetry of frontal bands', asym_pwrBand)
             (blinkRythm, moveRythm) = demo.EBdetection()
@@ -129,21 +128,22 @@ class EEGBasicDemo:
             # Wait at least 5 secondes before sending next data
             workingTime = time.time()-startTime;
             remainingTime = 5 - workingTime;
+            print(remainingTime)
             if(remainingTime > 0):
                 pause(remainingTime)
             
             startTime = time.time()
             
             # 6) send data to unity server application
-            self.unity.writeInt32(r_mean) # global heart rate mean
+            self.unity.writeInt32(int(r_mean)) # global heart rate mean
             self.unity.writeInt32(int(blinkRythm*10000)) # eye blink rate (nb blink per sec)
-			self.unity.writeInt32(int(moveRythm *10000)) # eye move rate (nb move per sec)
+            #self.unity.writeInt32(int(moveRythm *10000)) # eye move rate (nb move per sec)
             # alpha, beta, delta, theta, gamma power mean
-            self.unity.writeInt32(avg_pwrBand[0])
-            self.unity.writeInt32(avg_pwrBand[1])
-            self.unity.writeInt32(avg_pwrBand[2])
-            self.unity.writeInt32(avg_pwrBand[3])
-            self.unity.writeInt32(avg_pwrBand[4])
+            self.unity.writeInt32(int(avg_pwrBand[0]*10000))
+            self.unity.writeInt32(int(avg_pwrBand[1]*10000))
+            self.unity.writeInt32(int(avg_pwrBand[2]*10000))
+            self.unity.writeInt32(int(avg_pwrBand[3]*10000))
+            self.unity.writeInt32(int(avg_pwrBand[4]*10000))
             
             
             
@@ -179,10 +179,10 @@ if __name__ == "__main__":
     print(demo.HRdetection())"""
     
     # Eyes Blinks and Movements
-    demo.load_data_from_txt('record.txt', 128)
+    """demo.load_data_from_txt('record.txt', 128)
     (blinkRythm, moveRythm) = demo.EBdetection()
     print('nb clignement/seconde', blinkRythm)
-    print('nb mouvement/seconde', moveRythm)
+    print('nb mouvement/seconde', moveRythm)"""
     
     # Neural waves bands
     """demo.load_data_from_txt('recordWB3.txt', 128)
@@ -191,7 +191,7 @@ if __name__ == "__main__":
     print('Asymmetry of frontal bands', asym_pwrBand)"""
     
     ## Online test: Connection to mules server
-    #demo.start_experiment()
+    demo.start_experiment()
 
 
 
