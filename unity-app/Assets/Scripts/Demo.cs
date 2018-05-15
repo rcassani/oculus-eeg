@@ -5,7 +5,13 @@ using UnityEngine;
 public class Demo : MonoBehaviour {
     public int serverPort = 40000;
     public GameObject screen;
-    public GameObject hrText;   
+    public GameObject hrText;
+    public GameObject brText;
+    public GameObject delta_bar;
+    public GameObject theta_bar;
+    public GameObject alpha_bar;
+    public GameObject beta_bar;
+    public GameObject gamma_bar;
     private TcpIpServer tcpServer;
     private UnityEngine.Video.VideoPlayer videoPlayer;
     private bool videoRemotePlay = false;
@@ -19,6 +25,8 @@ public class Demo : MonoBehaviour {
     private int alpha = 0;
     private int betta = 0;
     private int gamma = 0;
+    private Vector3 tmp_position;
+    private Vector3 tmp_scale;
 
 
 
@@ -56,11 +64,8 @@ public class Demo : MonoBehaviour {
             theta = this.tcpServer.ReadCommand();
             gamma = this.tcpServer.ReadCommand();
 
-
             Debug.Log("HR received: " + hrVal.ToString());
-
             Debug.Log("BK received: " + bkVal.ToString());
-
             Debug.Log("D received: " + delta.ToString());
             Debug.Log("T received: " + theta.ToString());
             Debug.Log("A received: " + alpha.ToString());
@@ -70,6 +75,17 @@ public class Demo : MonoBehaviour {
 
             // Update the UI HERE
             hrText.GetComponent<TextMesh>().text = "♥HR: " + hrVal.ToString() + " bpm";
+
+            brText.GetComponent<TextMesh>().text = "⊖⊖BR: " + bkVal.ToString() + " bpm";
+
+
+            tmp_scale = delta_bar.GetComponent<Transform>().localScale;
+            tmp_scale.y = delta / 10000 * 2;
+            delta_bar.GetComponent<Transform>().localScale = tmp_scale;
+            tmp_position = delta_bar.GetComponent<Transform>().position;
+            tmp_position.z = delta / 10000 * -1;
+            delta_bar.GetComponent<Transform>().position = tmp_position;
+
 
             // Quit was requested, int(11)
             if (hrVal == 11)
