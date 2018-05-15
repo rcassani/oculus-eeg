@@ -94,7 +94,8 @@ class HeartRateDetector:
          -0.0118461229491463, -0.00975274011069758, -0.00338213902480510, 0.00175388002838372,
          0.00217285117125674, -0.00306702816335260, 0.00212600916574038]"""
         
-        if not bfilter in self.__dict__:
+        if not 'bfilter' in self.__dict__:
+            print('Creation du filtre')
             bfilter = coeffbandpass_filter(self.f_stop_low, self.f_pass_low,
                                            self.f_pass_high, self.f_stop_high, fs, self.n)
         
@@ -113,7 +114,7 @@ class HeartRateDetector:
         flt_data = filtfilt(data, data_len, bfilter)
         
         # Detection de pics
-        (inter_peaks, pos_peaks) = peaks_detection(self, flt_data, fs, threshold=3, refract_delay=0.3)
+        (inter_peaks, pos_peaks) = peaks_detection(flt_data, fs, threshold=3, refract_delay=0.3)
         
         # suppression de la premiere mesure (fausse)
         inter_peaks = inter_peaks[1:]

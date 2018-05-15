@@ -343,11 +343,11 @@ MonoBehaviour:
   screen: {fileID: 1440365663}
   hrText: {fileID: 732363960}
   brText: {fileID: 1988906723}
-  delta_bar: {fileID: 0}
-  theta_bar: {fileID: 0}
-  alpha_bar: {fileID: 0}
-  beta_bar: {fileID: 0}
-  gamma_bar: {fileID: 0}
+  delta_bar: {fileID: 710122921}
+  theta_bar: {fileID: 1139211796}
+  alpha_bar: {fileID: 18958822}
+  beta_bar: {fileID: 1132297628}
+  gamma_bar: {fileID: 1374095222}
 --- !u!1 &315306236
 GameObject:
   m_ObjectHideFlags: 0
