@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class VideoNExperimentBehaviour : MonoBehaviour {
     public int serverPort = 40000;
-    public string videosPath;
     public GameObject screen;
     
     private TcpIpServer tcpServer;

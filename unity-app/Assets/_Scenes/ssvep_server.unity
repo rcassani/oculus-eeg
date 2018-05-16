@@ -326,11 +326,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 307358697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4f73063359402c4c83aab262e0bb858, type: 3}
+  m_Script: {fileID: 11500000, guid: e499d50a010bfa4498e91bd41da6d4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  calculationPeriod: 1
-  frameRate: 0
+  ServerPort: 40000
+  blinkingTarget: {fileID: 1711950936}
+  fixationTarget: {fileID: 1587619429}
 --- !u!114 &307358700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,12 +340,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 307358697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 168cf335ce6876446a571bef75597e62, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f8f5d4eb8e16ea4da48f138cf12be4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ServerPort: 40000
-  blinkingTarget: {fileID: 1711950936}
-  fixationTarget: {fileID: 1081549732}
+  calculationPeriod: 1
+  frameRate: 0
 --- !u!1 &315306236
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1081549732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -613,14 +613,13 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 10055acbbb4bf8944b052c08fe45dbc8, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_Texture: {fileID: 2800000, guid: adada8839959c2a4dafcf3a70ab15eb5, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!222 &1081549735
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1194,7 +1193,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1711950936}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22678f739925b4b41ab2455ddf1bd569, type: 3}
+  m_Script: {fileID: 11500000, guid: 51937f597fc281d4281b582072a835c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   frameRate: 75
@@ -1225,10 +1224,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1724569238}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e8029ed361e3c14287e2924f09aa8fb, type: 3}
+  m_Script: {fileID: 11500000, guid: feff15affe0f71e4c8ad27d439a7937a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 0
 --- !u!4 &1724569244
 Transform:
   m_ObjectHideFlags: 0

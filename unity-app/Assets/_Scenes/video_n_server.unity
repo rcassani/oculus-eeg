@@ -240,11 +240,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 307358697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4f73063359402c4c83aab262e0bb858, type: 3}
+  m_Script: {fileID: 11500000, guid: 772abbb30591ce4428f80bc515cce400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  calculationPeriod: 1
-  frameRate: 0
+  serverPort: 40000
+  screen: {fileID: 1440365663}
 --- !u!114 &307358700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,12 +253,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 307358697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52a57bba7d92f79479e90826da56aeda, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f8f5d4eb8e16ea4da48f138cf12be4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverPort: 40000
-  videosPath: ./Assets/Videos
-  screen: {fileID: 1440365663}
+  calculationPeriod: 1
+  frameRate: 0
 --- !u!1 &315306236
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,14 +545,12 @@ VideoPlayer:
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
   m_Url: file://D:/Users/cassani/Documents/GitHub/oculus-eeg/unity-app/Assets/Videos/video_01.mp4
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
@@ -648,10 +645,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1724569238}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e8029ed361e3c14287e2924f09aa8fb, type: 3}
+  m_Script: {fileID: 11500000, guid: feff15affe0f71e4c8ad27d439a7937a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 0
 --- !u!4 &1724569244
 Transform:
   m_ObjectHideFlags: 0

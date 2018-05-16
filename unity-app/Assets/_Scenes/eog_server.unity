@@ -326,11 +326,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 307358697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4f73063359402c4c83aab262e0bb858, type: 3}
+  m_Script: {fileID: 11500000, guid: d0901654af04c67489c3d5e86b3656f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  calculationPeriod: 1
-  frameRate: 0
+  ServerPort: 40000
+  Radious: 150
+  gazeTarget: {fileID: 1081549732}
 --- !u!114 &307358700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,12 +340,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 307358697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daab906c9fd0e2d40828d45cc801a699, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f8f5d4eb8e16ea4da48f138cf12be4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ServerPort: 40000
-  Radious: 150
-  gazeTarget: {fileID: 1081549732}
+  calculationPeriod: 1
+  frameRate: 0
 --- !u!1 &315306236
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1081549732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -613,14 +613,13 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e0c653016b4915c4baf1ea519f3c04ae, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_Texture: {fileID: 2800000, guid: e6d3b3a71d4eba0478601d60dfd9bd5b, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!222 &1081549735
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1043,10 +1042,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1724569238}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e8029ed361e3c14287e2924f09aa8fb, type: 3}
+  m_Script: {fileID: 11500000, guid: feff15affe0f71e4c8ad27d439a7937a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 0
 --- !u!4 &1724569244
 Transform:
   m_ObjectHideFlags: 0

@@ -19,14 +19,13 @@ public class Demo : MonoBehaviour {
     private int currentVideo = 0;
     private int requestVideo = 1;
     private int hrVal = 0;
-    private int bkVal = 0;
-    private int delta = 0;
-    private int theta = 0;
-    private int alpha = 0;
-    private int betta = 0;
-    private int gamma = 0;
-    private Vector3 tmp_position;
-    private Vector3 tmp_scale;
+    private float bkVal = 0;
+    private float delta = 0;
+    private float theta = 0;
+    private float alpha = 0;
+    private float beta = 0;
+    private float gamma = 0;
+
 
 
 
@@ -55,15 +54,16 @@ public class Demo : MonoBehaviour {
             hrVal = this.tcpServer.ReadCommand();
 
             // given in blinks per second * 10000
-            bkVal = this.tcpServer.ReadCommand();
+            bkVal = this.tcpServer.ReadCommand() / 10000f * 60f;
 
             // power bands sum 10,000
             alpha = this.tcpServer.ReadCommand();
-            betta = this.tcpServer.ReadCommand();
+            beta = this.tcpServer.ReadCommand();
             delta = this.tcpServer.ReadCommand();
             theta = this.tcpServer.ReadCommand();
             gamma = this.tcpServer.ReadCommand();
 
+            /*
             Debug.Log("HR received: " + hrVal.ToString());
             Debug.Log("BK received: " + bkVal.ToString());
             Debug.Log("D received: " + delta.ToString());
@@ -71,21 +71,19 @@ public class Demo : MonoBehaviour {
             Debug.Log("A received: " + alpha.ToString());
             Debug.Log("B received: " + betta.ToString());
             Debug.Log("G received: " + gamma.ToString());
-
+            */
 
             // Update the UI HERE
             hrText.GetComponent<TextMesh>().text = "♥HR: " + hrVal.ToString() + " bpm";
 
             brText.GetComponent<TextMesh>().text = "⊖⊖BR: " + bkVal.ToString() + " bpm";
 
-            
-            tmp_scale = delta_bar.GetComponent<Transform>().localScale;
-            tmp_scale.y = delta / 10000 * 2;
-            delta_bar.GetComponent<Transform>().localScale = tmp_scale;
-            tmp_position = delta_bar.GetComponent<Transform>().position;
-            tmp_position.z = delta / 10000 * -1;
-            delta_bar.GetComponent<Transform>().position = tmp_position;
-            
+            update_bar_size(delta_bar, delta);
+            update_bar_size(theta_bar, theta);
+            update_bar_size(alpha_bar, alpha);
+            update_bar_size(beta_bar, beta);
+            update_bar_size(gamma_bar, gamma);
+
 
             // Quit was requested, int(11)
             if (hrVal == 11)
@@ -131,4 +129,17 @@ public class Demo : MonoBehaviour {
             }
         }      
     }
+
+    void update_bar_size(GameObject bar, float value)
+    {
+        Vector3 tmp_position;
+        Vector3 tmp_scale;
+        tmp_scale = bar.GetComponent<Transform>().localScale;
+        tmp_scale.y = value / 10000 * 2;
+        bar.GetComponent<Transform>().localScale = tmp_scale;
+        tmp_position = bar.GetComponent<Transform>().localPosition;
+        tmp_position.z = (value / 10000 * -1) - 0.8f;
+        bar.GetComponent<Transform>().localPosition = tmp_position;
+    }
+
 }

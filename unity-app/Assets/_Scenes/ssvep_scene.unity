@@ -328,8 +328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f73063359402c4c83aab262e0bb858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  calculationPeriod: 1
-  frameRate: 0
 --- !u!1 &315306236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,11 +1015,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1711950936}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22678f739925b4b41ab2455ddf1bd569, type: 3}
+  m_Script: {fileID: 11500000, guid: 51937f597fc281d4281b582072a835c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   frameRate: 75
-  stimulusDesireFrequency: 11
+  stimulusDesireFrequency: 12.5
   stimulusAproxFrequency: 0
   stimulusRealFrequency: 0
 --- !u!1 &1724569238
@@ -1051,7 +1049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e8029ed361e3c14287e2924f09aa8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!4 &1724569244
 Transform:
   m_ObjectHideFlags: 0
